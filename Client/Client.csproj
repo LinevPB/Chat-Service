@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Console\Console.csproj" />
+    <ProjectReference Include="..\Packets\Packets.csproj" />
+  </ItemGroup>
+
 </Project>
