@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Packets
+namespace App.Packets
 {
     public class Packet
     {
