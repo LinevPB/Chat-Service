@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using App.CustomConsole;
+using App.Packets;
 
 namespace App.Sockets
 {
@@ -68,6 +69,14 @@ namespace App.Sockets
         public async void ReadAndListen()
         {
 
+        }
+
+        public async void SendData(Packet packet)
+        {
+            await Task.Run(() =>
+            {
+                socket.Send(packet.GetData());
+            });
         }
     }
 }

@@ -56,5 +56,10 @@
         {
             Log(ConsoleColor.Red, "Error", value);
         }
+
+        public static string ReadLine()
+        {
+            return Console.ReadLine();
+        }
     }
 }
