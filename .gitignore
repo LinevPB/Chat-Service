@@ -101,3 +101,7 @@ Server/obj/Debug/net6.0/Server.dll
 Server/obj/Debug/net6.0/Server.genruntimeconfig.cache
 Server/obj/Debug/net6.0/Server.pdb
 Packets/obj/Debug/net6.0/Packets.GeneratedMSBuildEditorConfig.editorconfig
+Chat Service/.vs/Chat Service/DesignTimeBuild/.dtbcache.v2
+Server/.vs/Server/DesignTimeBuild/.dtbcache.v2
+Server/.vs/Server/v17/.futdcache.v1
+Server/.vs/Server/v17/.suo

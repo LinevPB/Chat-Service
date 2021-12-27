@@ -21,8 +21,6 @@ namespace Client
             if (!controller.Connect())
                 return;
 
-            
-
             while (controller.Connected)
             {
                controller.ReadAndListen();

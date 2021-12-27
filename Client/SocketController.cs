@@ -14,6 +14,7 @@ namespace App.Sockets
     {
         private Socket socket;
         private IPEndPoint ipEndPoint;
+        private string clientName;
         public bool Connected {
             get
             {
@@ -25,6 +26,7 @@ namespace App.Sockets
         {
             ipEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
             socket = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            this.clientName = clientName;
         }
 
         public bool Connect()
@@ -54,6 +56,12 @@ namespace App.Sockets
                 }
             }
 
+            Packet packet = new Packet();
+            packet.WriteInt((int)Packet.PacketType.SEND_RECEIVE_NAME);
+            packet.WriteString(clientName);
+            packet.Parse();
+            Packet.SendData(socket, packet);
+
             MyConsole.Info("Connected!");
             MyConsole.WriteLine(ConsoleColor.Green, "---------------------");
             MyConsole.NewLine();
@@ -69,14 +77,6 @@ namespace App.Sockets
         public async void ReadAndListen()
         {
 
-        }
-
-        public async void SendData(Packet packet)
-        {
-            await Task.Run(() =>
-            {
-                socket.Send(packet.GetData());
-            });
         }
     }
 }
