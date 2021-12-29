@@ -37,17 +37,22 @@ namespace App.Packets
         {
             List<Tuple<Packet.DataType, string>> result = new List<Tuple<Packet.DataType,string>>();
 
-            bool typeKnown = false;
-            bool lengthKnown = false;
-            bool contentKnown = false;
+            int readLengthStartIndex = 0;
 
-            char ctype = ' ';
-            string length = String.Empty;
-            int i32length = 0;
-            int contentStartIndex = 0;
-            string subContent = String.Empty;
+            for(int i = 0; i < content.Length; i++)
+            {
+                if (Packet.ValidateType(content[i]))
+                {
+                    int length = Int32.Parse(content.Substring(readLengthStartIndex, i - readLengthStartIndex));
+                    Packet.DataType type = (Packet.DataType)content[i];
 
-            //tbd
+                    string subcontent = content.Substring(i + 1, length);
+                    result.Add(new Tuple<Packet.DataType, string>(type, subcontent));
+
+                    i = i + 1 + length;
+                    readLengthStartIndex = i;
+                }
+            }
 
             return result;
         }
@@ -71,16 +76,17 @@ namespace App.Packets
         {
             await Task.Run(() =>
             {
+                if (!socket.Connected)
+                    return;
+
                 socket.Send(packet.GetData());
             });
         }
 
         public static List<Tuple<Packet.DataType, string>> Decode(int bytes, ref StringBuilder sb, ref byte[] buffer)
         {
-            string decodedString;
-
             sb.Append(Encoding.ASCII.GetString(buffer, 0, bytes));
-            decodedString = sb.ToString();
+            string decodedString = sb.ToString();
             sb.Clear();
 
             return Deconstruct(decodedString);

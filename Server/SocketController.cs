@@ -37,6 +37,7 @@ namespace App.Sockets
         public void Start()
         {
             MyConsole.Info($"Started listening on { ipEndPoint.Address }:{ ipEndPoint.Port }..");
+            MyConsole.NewLine();
             socket.Listen(ipEndPoint.Port);
 
             while(true)
@@ -84,6 +85,9 @@ namespace App.Sockets
         {
             ClientStructure client = (ClientStructure)result.AsyncState;
 
+            if (!client.Socket.Connected)
+                return;
+
             int bytes = client.Socket.EndReceive(result);
             if (bytes == 0)
                 return;
@@ -91,12 +95,27 @@ namespace App.Sockets
             List<Tuple<Packet.DataType, string>> tuples;
             tuples = Packet.Decode(bytes, ref client.state.StringBuilder, ref client.state.Buffer);
 
-            /*switch(Packet.ParseInt(tuples[0].Item2))
+            switch(Packet.ParseInt(tuples[0].Item2))
             {
                 case (int)Packet.PacketType.SEND_RECEIVE_NAME:
-                    Console.WriteLine(tuples[1].Item2);
+                    client.Name = tuples[1].Item2;
                     break;
-            }*/
+
+                case (int)Packet.PacketType.SEND_RECEIVE_MESSAGE:
+                    Packet packet = new Packet();
+                    packet.WriteInt((int)Packet.PacketType.SEND_RECEIVE_MESSAGE);
+                    packet.WriteString(client.Name);
+                    packet.WriteString(tuples[1].Item2);
+                    packet.Parse();
+
+                    foreach(ClientStructure send_client in clients)
+                    {
+                        Packet.SendData(send_client.Socket, packet);
+                    }
+
+                    MyConsole.PlayerMessage(client.Name, tuples[1].Item2);
+                    break;
+            }
 
             client.clientEvent.Set();
         }

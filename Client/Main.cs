@@ -13,7 +13,9 @@ namespace Client
             MyConsole.NewLine();
 
             MyConsole.Write("Enter your name: ");
-            string name = MyConsole.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            string name = MyConsole.ReadLine(true);
+            Console.ResetColor();
             MyConsole.NewLine();
 
             SocketController controller = new SocketController("127.0.0.1", 28970, name);
@@ -21,9 +23,9 @@ namespace Client
             if (!controller.Connect())
                 return;
 
-            while (controller.Connected)
+            while(controller.Connected)
             {
-               controller.ReadAndListen();
+                // ??
             }
         }
     }
