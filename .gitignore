@@ -107,3 +107,27 @@ Server/.vs/Server/v17/.futdcache.v1
 Server/.vs/Server/v17/.suo
 Server/bin/Debug/net6.0/Server Scripts.dll
 Server/bin/Debug/net6.0/Server Scripts.pdb
+Server Scripts/obj/Server Scripts.csproj.nuget.g.targets
+Server Scripts/obj/Server Scripts.csproj.nuget.g.props
+Server Scripts/obj/Server Scripts.csproj.nuget.dgspec.json
+Server Scripts/obj/project.nuget.cache
+Server Scripts/obj/project.assets.json
+Server Scripts/obj/Debug/net6.0/Server Scripts.pdb
+Server Scripts/obj/Debug/net6.0/Server Scripts.GlobalUsings.g.cs
+Server Scripts/obj/Debug/net6.0/Server Scripts.GeneratedMSBuildEditorConfig.editorconfig
+Server Scripts/obj/Debug/net6.0/Server Scripts.dll
+Server Scripts/obj/Debug/net6.0/Server Scripts.csproj.FileListAbsolute.txt
+Server Scripts/obj/Debug/net6.0/Server Scripts.csproj.CoreCompileInputs.cache
+Server Scripts/obj/Debug/net6.0/Server Scripts.csproj.CopyComplete
+Server Scripts/obj/Debug/net6.0/Server Scripts.csproj.AssemblyReference.cache
+Server Scripts/obj/Debug/net6.0/Server Scripts.assets.cache
+Server Scripts/obj/Debug/net6.0/Server Scripts.AssemblyInfoInputs.cache
+Server Scripts/obj/Debug/net6.0/Server Scripts.AssemblyInfo.cs
+Server Scripts/obj/Debug/net6.0/ref/Server Scripts.dll
+Server Scripts/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+Server Scripts/bin/Debug/net6.0/Server Scripts.pdb
+Server Scripts/bin/Debug/net6.0/Server Scripts.dll
+Server Scripts/bin/Debug/net6.0/Server Scripts.deps.json
+Server Scripts/bin/Debug/net6.0/ref/Server Scripts.dll
+Server Scripts/bin/Debug/net6.0/Console.pdb
+Server Scripts/bin/Debug/net6.0/Console.dll
