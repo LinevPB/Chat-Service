@@ -12,9 +12,15 @@ namespace Client
 
             MyConsole.Write("Enter your name: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
+
             string name = MyConsole.ReadLine(true);
+
             Console.ResetColor();
             MyConsole.NewLine();
+
+            string ip = "127.0.0.1";
+            if (args.Length > 0)
+                ip = args[0];
 
             SocketController controller = new SocketController("127.0.0.1", 28970, name);
 

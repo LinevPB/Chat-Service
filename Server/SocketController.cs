@@ -18,7 +18,7 @@ namespace App.Sockets
         public SocketController(int port, string ipAddress = "default")
         {
             IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ip = ipHost.AddressList[0];
+            IPAddress ip = ipHost.AddressList.Last();
 
             if (ipAddress != "default")
                 ip = IPAddress.Parse(ipAddress);
