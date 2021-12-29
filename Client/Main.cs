@@ -7,6 +7,7 @@ namespace Client
     {
         public static void Main(string[] args)
         {
+            Console.Clear();
             MyConsole.WriteLine(ConsoleColor.Blue, "Chat application");
             MyConsole.NewLine();
 
@@ -19,10 +20,10 @@ namespace Client
             MyConsole.NewLine();
 
             string ip = "127.0.0.1";
-            if (args.Length > 0)
+            if (args.Length != 0)
                 ip = args[0];
 
-            SocketController controller = new SocketController("127.0.0.1", 28970, name);
+            SocketController controller = new SocketController(ip, 28970, name);
 
             if (!controller.Connect())
                 return;

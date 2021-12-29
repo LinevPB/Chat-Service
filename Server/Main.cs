@@ -7,6 +7,7 @@ namespace Server
     {
         public static void Main()
         {
+            Console.Clear();
             MyConsole.WriteLine(ConsoleColor.Blue, "Chat server application");
             MyConsole.NewLine();
 

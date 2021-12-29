@@ -131,3 +131,114 @@ Server Scripts/bin/Debug/net6.0/Server Scripts.deps.json
 Server Scripts/bin/Debug/net6.0/ref/Server Scripts.dll
 Server Scripts/bin/Debug/net6.0/Console.pdb
 Server Scripts/bin/Debug/net6.0/Console.dll
+Client/bin/Release/net6.0/Client.deps.json
+Client/bin/Release/net6.0/Client.dll
+Client/bin/Release/net6.0/Client.exe
+Client/bin/Release/net6.0/Client.pdb
+Client/bin/Release/net6.0/Client.runtimeconfig.json
+Client/bin/Release/net6.0/Console.dll
+Client/bin/Release/net6.0/Console.pdb
+Client/bin/Release/net6.0/Packets.dll
+Client/bin/Release/net6.0/Packets.pdb
+Client/bin/Release/net6.0/ref/Client.dll
+Client/Client.csproj.user
+Client/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+Client/obj/Release/net6.0/apphost.exe
+Client/obj/Release/net6.0/Client.AssemblyInfo.cs
+Client/obj/Release/net6.0/Client.AssemblyInfoInputs.cache
+Client/obj/Release/net6.0/Client.assets.cache
+Client/obj/Release/net6.0/Client.csproj.AssemblyReference.cache
+Client/obj/Release/net6.0/Client.csproj.CopyComplete
+Client/obj/Release/net6.0/Client.csproj.CoreCompileInputs.cache
+Client/obj/Release/net6.0/Client.csproj.FileListAbsolute.txt
+Client/obj/Release/net6.0/Client.dll
+Client/obj/Release/net6.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+Client/obj/Release/net6.0/Client.genruntimeconfig.cache
+Client/obj/Release/net6.0/Client.GlobalUsings.g.cs
+Client/obj/Release/net6.0/Client.pdb
+Client/obj/Release/net6.0/PublishOutputs.426ecc7a08.txt
+Client/obj/Release/net6.0/ref/Client.dll
+Client/Properties/PublishProfiles/FolderProfile.pubxml
+Client/Properties/PublishProfiles/FolderProfile.pubxml.user
+Console/bin/Release/net6.0/Console.deps.json
+Console/bin/Release/net6.0/Console.dll
+Console/bin/Release/net6.0/Console.pdb
+Console/bin/Release/net6.0/ref/Console.dll
+Console/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+Console/obj/Release/net6.0/Console.AssemblyInfo.cs
+Console/obj/Release/net6.0/Console.AssemblyInfoInputs.cache
+Console/obj/Release/net6.0/Console.assets.cache
+Console/obj/Release/net6.0/Console.csproj.AssemblyReference.cache
+Console/obj/Release/net6.0/Console.csproj.CoreCompileInputs.cache
+Console/obj/Release/net6.0/Console.csproj.FileListAbsolute.txt
+Console/obj/Release/net6.0/Console.dll
+Console/obj/Release/net6.0/Console.GeneratedMSBuildEditorConfig.editorconfig
+Console/obj/Release/net6.0/Console.GlobalUsings.g.cs
+Console/obj/Release/net6.0/Console.pdb
+Console/obj/Release/net6.0/ref/Console.dll
+Packets/bin/Release/net6.0/Packets.deps.json
+Packets/bin/Release/net6.0/Packets.dll
+Packets/bin/Release/net6.0/Packets.pdb
+Packets/bin/Release/net6.0/ref/Packets.dll
+Packets/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+Packets/obj/Release/net6.0/Packets.AssemblyInfo.cs
+Packets/obj/Release/net6.0/Packets.AssemblyInfoInputs.cache
+Packets/obj/Release/net6.0/Packets.assets.cache
+Packets/obj/Release/net6.0/Packets.csproj.AssemblyReference.cache
+Packets/obj/Release/net6.0/Packets.csproj.CoreCompileInputs.cache
+Packets/obj/Release/net6.0/Packets.csproj.FileListAbsolute.txt
+Packets/obj/Release/net6.0/Packets.dll
+Packets/obj/Release/net6.0/Packets.GeneratedMSBuildEditorConfig.editorconfig
+Packets/obj/Release/net6.0/Packets.GlobalUsings.g.cs
+Packets/obj/Release/net6.0/Packets.pdb
+Packets/obj/Release/net6.0/ref/Packets.dll
+Server Scripts/bin/Release/net6.0/Console.dll
+Server Scripts/bin/Release/net6.0/Console.pdb
+Server Scripts/bin/Release/net6.0/ref/Server Scripts.dll
+Server Scripts/bin/Release/net6.0/Server Scripts.deps.json
+Server Scripts/bin/Release/net6.0/Server Scripts.dll
+Server Scripts/bin/Release/net6.0/Server Scripts.pdb
+Server Scripts/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+Server Scripts/obj/Release/net6.0/ref/Server Scripts.dll
+Server Scripts/obj/Release/net6.0/Server Scripts.AssemblyInfo.cs
+Server Scripts/obj/Release/net6.0/Server Scripts.AssemblyInfoInputs.cache
+Server Scripts/obj/Release/net6.0/Server Scripts.assets.cache
+Server Scripts/obj/Release/net6.0/Server Scripts.csproj.AssemblyReference.cache
+Server Scripts/obj/Release/net6.0/Server Scripts.csproj.CopyComplete
+Server Scripts/obj/Release/net6.0/Server Scripts.csproj.CoreCompileInputs.cache
+Server Scripts/obj/Release/net6.0/Server Scripts.csproj.FileListAbsolute.txt
+Server Scripts/obj/Release/net6.0/Server Scripts.dll
+Server Scripts/obj/Release/net6.0/Server Scripts.GeneratedMSBuildEditorConfig.editorconfig
+Server Scripts/obj/Release/net6.0/Server Scripts.GlobalUsings.g.cs
+Server Scripts/obj/Release/net6.0/Server Scripts.pdb
+Server/bin/Release/net6.0/Console.dll
+Server/bin/Release/net6.0/Console.pdb
+Server/bin/Release/net6.0/Packets.dll
+Server/bin/Release/net6.0/Packets.pdb
+Server/bin/Release/net6.0/ref/Server.dll
+Server/bin/Release/net6.0/Server Scripts.dll
+Server/bin/Release/net6.0/Server Scripts.pdb
+Server/bin/Release/net6.0/Server.deps.json
+Server/bin/Release/net6.0/Server.dll
+Server/bin/Release/net6.0/Server.exe
+Server/bin/Release/net6.0/Server.pdb
+Server/bin/Release/net6.0/Server.runtimeconfig.json
+Server/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+Server/obj/Release/net6.0/apphost.exe
+Server/obj/Release/net6.0/PublishOutputs.1be73994f5.txt
+Server/obj/Release/net6.0/ref/Server.dll
+Server/obj/Release/net6.0/Server.AssemblyInfo.cs
+Server/obj/Release/net6.0/Server.AssemblyInfoInputs.cache
+Server/obj/Release/net6.0/Server.assets.cache
+Server/obj/Release/net6.0/Server.csproj.AssemblyReference.cache
+Server/obj/Release/net6.0/Server.csproj.CopyComplete
+Server/obj/Release/net6.0/Server.csproj.CoreCompileInputs.cache
+Server/obj/Release/net6.0/Server.csproj.FileListAbsolute.txt
+Server/obj/Release/net6.0/Server.dll
+Server/obj/Release/net6.0/Server.GeneratedMSBuildEditorConfig.editorconfig
+Server/obj/Release/net6.0/Server.genruntimeconfig.cache
+Server/obj/Release/net6.0/Server.GlobalUsings.g.cs
+Server/obj/Release/net6.0/Server.pdb
+Server/Properties/PublishProfiles/FolderProfile.pubxml
+Server/Properties/PublishProfiles/FolderProfile.pubxml.user
+Server/Server.csproj.user
