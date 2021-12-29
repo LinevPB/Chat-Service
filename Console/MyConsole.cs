@@ -3,6 +3,7 @@
     public static class MyConsole
     {
         private static int currentLine = 0;
+        private static string lastPrefix = String.Empty;
         private static bool readingLine = false;
 
         public static void Write(string value)
@@ -20,8 +21,8 @@
         public static void WriteLine(string value)
         {
             Console.CursorTop = currentLine;
-            currentLine++;
             Console.WriteLine(value);
+            currentLine++;
         }
 
         public static void WriteLine(ConsoleColor color, string value)
@@ -39,10 +40,11 @@
         public static void PlayerMessage(string name, string msg)
         {
             int cursorLeft = MoveBufferIfReading();
-            Console.CursorTop = currentLine;
             Console.CursorLeft = 0;
-            Write(ConsoleColor.Yellow, name + "> ");
-            WriteLine(msg);
+            Console.CursorTop = currentLine;
+            Write(ConsoleColor.Yellow, name);
+            Write(msg + "\n");
+            currentLine++;
             Console.CursorLeft = cursorLeft;
         }
 
@@ -74,29 +76,32 @@
             Log(ConsoleColor.Red, "Error", value);
         }
 
-        private static void ClearPreviousLine()
+        private static void ClearPreviousLine(int index = 0)
         {
-            int currentCursorLeft = Console.CursorLeft;
+            int cursorTop = currentLine;
             Console.CursorLeft = 0;
-            Console.CursorTop = currentLine;
+            Console.CursorTop = cursorTop - index;
             Console.Write(new String(' ', Console.WindowWidth));
         }
 
         public static string ReadLine(bool inline = false)
         {
-            readingLine = true;
             string line = Console.ReadLine();
-            if (!inline)
-                ClearPreviousLine();
-            readingLine = false;
+
             return line;
         }
+
 
         public static string ReadLine(string prefix)
         {
             readingLine = true;
-            Write(ConsoleColor.Red, prefix + " ");
+            Console.CursorTop = currentLine;
+            Write(ConsoleColor.Red, prefix);
+
             string line = ReadLine();
+            ClearPreviousLine(0);
+            readingLine = false;
+
             return line;
         }
 
@@ -104,14 +109,11 @@
         {
             if (readingLine)
             {
-                int cursorLeft = Console.CursorLeft;
-                Console.MoveBufferArea(0, Console.CursorTop,
-                    Console.BufferWidth, 1, 0, currentLine + 1);
-                Console.CursorLeft = cursorLeft;
-                return cursorLeft;
+                Console.MoveBufferArea(0, currentLine,
+                    Console.WindowWidth, 1, 0, currentLine + 1);
             }
 
-            return 0;
+            return Console.CursorLeft;
         }
     }
 }

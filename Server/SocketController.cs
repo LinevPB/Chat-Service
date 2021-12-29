@@ -8,11 +8,14 @@ using System.Net.Sockets;
 using App.CustomConsole;
 using App.Clients;
 using App.Packets;
+using App.ServerScripts;
 
 namespace App.Sockets
 {
     public class SocketController
     {
+        private const int MAX_USERS = 120;
+
         private IPEndPoint ipEndPoint;
         private Socket socket;
         private ManualResetEvent resetEvent;
@@ -50,16 +53,35 @@ namespace App.Sockets
             }
         }
 
+        private int DetermineId()
+        {
+            List<int> ids = new List<int>();
+
+            foreach(ClientStructure client in clients)
+            {
+                ids.Add(client.Id);
+            }
+
+            for(int i = 0; i < MAX_USERS; i++)
+            {
+                if (!ids.Contains(i))
+                {
+                    return i;
+                }
+            }
+
+            return 0;
+        }
+
         private async void Accept(IAsyncResult result)
         {
             Socket connection = (Socket)result.AsyncState;
             Socket handler = connection.EndAccept(result);
 
-            MyConsole.Info($"{ handler.LocalEndPoint.ToString() } has connected.");
-
-            ClientStructure client = new ClientStructure(clients.Count, "Unknown", handler);
+            ClientStructure client = new ClientStructure(DetermineId(), "Unknown", handler);
             clients.Add(client);
 
+            Scripts.OnConnect(client.Id);
             ListenClient(client);
 
             resetEvent.Set();
@@ -99,9 +121,30 @@ namespace App.Sockets
             {
                 case (int)Packet.PacketType.SEND_RECEIVE_NAME:
                     client.Name = tuples[1].Item2;
+                    Scripts.OnChangeName(client.Id, tuples[1].Item2, client.Name);
                     break;
 
                 case (int)Packet.PacketType.SEND_RECEIVE_MESSAGE:
+                    if (tuples[1].Item2[0] == '/')
+                    {
+                        string commandName = "";
+                        for(int i = 1; i < tuples[1].Item2.Length; i++)
+                        {
+                            if (tuples[1].Item2[i] == ' ')
+                                break;
+
+                            commandName += tuples[1].Item2[i];
+                        }
+
+                        string arguments = tuples[1].Item2.Substring(1 + commandName.Length,
+                            tuples[1].Item2.Length - 1 - commandName.Length);
+                        if (arguments[0] == ' ')
+                            arguments = arguments.Substring(1);
+
+                        Scripts.OnCommand(client.Id, commandName, arguments);
+                        break;
+                    }
+
                     Packet packet = new Packet();
                     packet.WriteInt((int)Packet.PacketType.SEND_RECEIVE_MESSAGE);
                     packet.WriteString(client.Name);
@@ -113,7 +156,7 @@ namespace App.Sockets
                         Packet.SendData(send_client.Socket, packet);
                     }
 
-                    MyConsole.PlayerMessage(client.Name, tuples[1].Item2);
+                    Scripts.OnSendMessage(client.Id, tuples[1].Item2);
                     break;
             }
 

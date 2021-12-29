@@ -76,11 +76,6 @@ namespace App.Sockets
                 StartListening();
             });
 
-            Task.Run(() =>
-            {
-                StartReadingLines();
-            });
-
             return true;
         }
 
@@ -96,7 +91,11 @@ namespace App.Sockets
                 if (resetEvent.GetSafeWaitHandle() == null)
                     continue;
 
-                string line = MyConsole.ReadLine(">>");
+                string line = MyConsole.ReadLine(">> ");
+
+                if (!socket.Connected)
+                    return;
+
                 Packet packet = new Packet();
                 packet.WriteInt((int)Packet.PacketType.SEND_RECEIVE_MESSAGE);
                 packet.WriteString(line);
@@ -134,7 +133,7 @@ namespace App.Sockets
             switch(Packet.ParseInt(tuples[0].Item2))
             {
                 case (int)Packet.PacketType.SEND_RECEIVE_MESSAGE:
-                    MyConsole.PlayerMessage(tuples[1].Item2, tuples[2].Item2);
+                    MyConsole.PlayerMessage(tuples[1].Item2 + "> ", tuples[2].Item2);
                     break;
             }
 

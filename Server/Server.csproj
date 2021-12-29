@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\CharServiceSolution\Server Scripts\Server Scripts.csproj" />
     <ProjectReference Include="..\Console\Console.csproj" />
     <ProjectReference Include="..\Packets\Packets.csproj" />
   </ItemGroup>

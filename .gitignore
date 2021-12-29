@@ -105,3 +105,5 @@ Chat Service/.vs/Chat Service/DesignTimeBuild/.dtbcache.v2
 Server/.vs/Server/DesignTimeBuild/.dtbcache.v2
 Server/.vs/Server/v17/.futdcache.v1
 Server/.vs/Server/v17/.suo
+Server/bin/Debug/net6.0/Server Scripts.dll
+Server/bin/Debug/net6.0/Server Scripts.pdb
