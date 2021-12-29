@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Sockets;
-using App.CustomConsole;
+﻿using App.CustomConsole;
 
 namespace App.ServerScripts
 {
@@ -13,6 +7,7 @@ namespace App.ServerScripts
         public int id;
         public string name;
     }
+
     public static class Scripts
     {
         public static List<User> users = new List<User>();

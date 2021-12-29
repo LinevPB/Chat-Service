@@ -1,6 +1,4 @@
-﻿using System;
-using App.CustomConsole;
-using App.Packets;
+﻿using App.CustomConsole;
 using App.Sockets;
 
 namespace Client
